@@ -1,0 +1,10 @@
+.bot-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.upload-div{
+    display: flex;
+    flex-direction: column;
+}

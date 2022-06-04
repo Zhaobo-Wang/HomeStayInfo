@@ -1,0 +1,8 @@
+.Header {
+  padding: 1rem;
+}
+
+.login_button {
+  float: right;
+  color: black !important;
+}

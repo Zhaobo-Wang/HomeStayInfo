@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,600;1,300;1,400&family=Signika:wght@500&display=swap");
+
+.loginSider {
+  min-width: 49% !important;
+  min-height: 100vh;
+  background-color: rgb(236, 250, 245) !important;
+}
+
+.loginImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.slide-left {
+  -webkit-animation: slide-left 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-left 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.login-btn {
+  min-width: 60% !important;
+  font-size: 2rem !important;
+  float: right;
+  transition: transform 0.3s ease-out;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: transparent !important;
+}
+
+.login-btn:hover {
+  transform: translate(0, -5px);
+}
+
+.loginContent {
+  background-color: rgb(236, 250, 245) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginForm {
+  min-width: 65%;
+  padding: 8rem 8rem;
+  background-image: linear-gradient(to bottom, #a9dab0, #dbe9ea) !important;
+  /* box-shadow: 3px 3px rgba(27, 131, 96, 0.295); */
+  transition: transform 0.3s ease-out;
+  border-radius: 2rem;
+}
+
+.loginForm:hover {
+  transform: translate(0, -5px);
+  /* box-shadow: 4px 4px rgba(27, 131, 96, 0.295); */
+}
+
+.slide-bottom {
+  -webkit-animation: slide-bottom 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-bottom 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.loginTextButton {
+  min-width: 40%;
+  float: right;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.loginTitle {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.loginSubTitle {
+  margin-bottom: 2rem;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.loginInput {
+  font-family: "Josefin Sans", sans-serif;
+  border-radius: 2rem !important;
+  height: 4rem;
+}
