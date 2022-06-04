@@ -52,6 +52,7 @@ const updateForm_like_condition = tryCatchWrapper(async (req, res) => {
 
 // [Post] create one form
 const createForm = tryCatchWrapper(async (req, res) => {
+  console.log(req.body);
   const form = await FormSchema.create(req.body);
   res.status(201).json({ form });
 });

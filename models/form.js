@@ -31,6 +31,9 @@ const FormSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please provide some images"],
   },
+  imageDate: {
+    type: String,
+  },
   home_stay: {
     type: Boolean,
     default: false,

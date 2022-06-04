@@ -72,9 +72,8 @@ class List extends React.Component {
             return (
               <Card
                 className="Card"
-                title={form.host_name}
-                extra={<a href="#">More</a>}
-                style={{ width: 280 }}
+                cover={<img src={form.image}/>}
+                hoverable
                 actions={[
                   <Button
                     type="text"
@@ -107,6 +106,12 @@ class List extends React.Component {
                 ]}
               >
                 <p>
+                  <h1 className="line">Contact: {form.host_name}</h1>
+                </p>
+                <p>
+                  {form.imageDate}
+                </p>
+                {/* <p>
                   <h1 className="line">Email: </h1>
                   {form.email}
                 </p>
@@ -117,7 +122,7 @@ class List extends React.Component {
                 <p>
                   <h1 className="line">Apartment_address: </h1>
                   {form.apartment_address}
-                </p>
+                </p> */}
               </Card>
             );
           })}

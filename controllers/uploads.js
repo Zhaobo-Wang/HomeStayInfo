@@ -33,7 +33,7 @@ const uploadImageCoverCloudinary = tryCatchWrapper(async (req, res) => {
   if (!productImage.mimetype.startsWith("image")) {
     throw new Error("Please upload an image");
   }
-  const maxSize = 1024 * 1024* 2;
+  const maxSize = 1024 * 1024 * 2;
   if (productImage.size > maxSize) {
     throw new Error("Please upload an image less than 2MB");
   }
@@ -41,7 +41,7 @@ const uploadImageCoverCloudinary = tryCatchWrapper(async (req, res) => {
     .upload(productImage.tempFilePath, {
       use_filename: true,
       folder: "HomeStayInfo",
-      tags: ['cover']
+      tags: ["cover"],
     })
     .then((result) => {
       fs.unlinkSync(productImage.tempFilePath);

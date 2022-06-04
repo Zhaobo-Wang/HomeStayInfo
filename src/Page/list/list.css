@@ -1,10 +1,10 @@
 .List_layout {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
 .Card {
-    width: 27rem !important;
+    width: 34rem !important;
 }

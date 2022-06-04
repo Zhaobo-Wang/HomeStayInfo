@@ -3,6 +3,7 @@ import "./Host_form.css";
 import { Form, Input, Button, Checkbox, message, Upload } from "antd";
 import axios from "axios";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
+import ImgCrop from "antd-img-crop";
 
 const Host_form = () => {
   const [name, setName] = useState("");
@@ -10,10 +11,27 @@ const Host_form = () => {
   const [phone_number, setPhone_number] = useState("");
   const [apartment_address, setApartment_address] = useState("");
   const [loading, setLoading] = useState(false);
+  const [imageSrc, setImageSrc] = useState("");
+  const [imageDate, setImageDate] = useState("");
 
   const layout = {
     labelCol: { span: 9 },
     wrapperCol: { span: 15 },
+  };
+
+  const handleUpload = async (info) => {
+    try {
+      if (info.file.status === "uploading") {
+        setLoading(true);
+      }
+      setLoading(false);
+      setImageSrc(info.file.response.image.src);
+      setImageDate(info.file.lastModifiedDate);
+    } catch (error) {
+      message.error(
+        "Check your image file: maybe it is too large or format wrong!"
+      );
+    }
   };
 
   const handleFinish = async () => {
@@ -23,16 +41,13 @@ const Host_form = () => {
         email: email,
         phone_number: phone_number,
         apartment_address: apartment_address,
+        image: imageSrc,
+        imageDate: imageDate,
       });
       message.success("Submit success!");
     } catch (error) {
       message.error(error.response.data.msg.split(",")[0]);
     }
-  };
-
-  const handleUpload = async () => {
-    setLoading(true);
-    console.log("handleUpload");
   };
 
   return (
@@ -70,20 +85,27 @@ const Host_form = () => {
         />
       </Form.Item>
       <Form.Item label="Cover Image">
-        <Upload
-          name="avatar"
-          listType="picture-card"
-          onChange={handleUpload}
-          showUploadList={true}
-          action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+        <ImgCrop
+          rotate
+          modalTitle="Edit your Cover!"
+          quality={1}
+          aspect={8 / 6}
         >
-          <div className="upload-div">
-            <div>{loading ? <LoadingOutlined /> : <PlusOutlined />}</div>
-            <div style={{ marginTop: "0.5rem" }}>
-              {loading ? "Uploading" : "Upload"}
+          <Upload
+            name="Image"
+            listType="picture-card"
+            onChange={handleUpload}
+            showUploadList={true}
+            action="http://localhost:5000/api/v1/uploads/cover"
+          >
+            <div className="upload-div">
+              <div>{loading ? <LoadingOutlined /> : <PlusOutlined />}</div>
+              <div style={{ marginTop: "0.5rem" }}>
+                {loading ? "Uploading" : "Upload"}
+              </div>
             </div>
-          </div>
-        </Upload>
+          </Upload>
+        </ImgCrop>
       </Form.Item>
       <div class="bot-box">
         <Form.Item>
