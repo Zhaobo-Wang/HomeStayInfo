@@ -3,6 +3,7 @@ const path = require("path");
 const fs = require("fs");
 const cloudinary = require("cloudinary").v2;
 
+//locally
 const uploadImageOnServer = tryCatchWrapper(async (req, res) => {
   if (!req.files) {
     throw new Error("Please upload a file");
@@ -25,6 +26,7 @@ const uploadImageOnServer = tryCatchWrapper(async (req, res) => {
     .json({ image: { src: `/uploads/${productImage.name}` } });
 });
 
+//cloud
 const uploadImageCoverCloudinary = tryCatchWrapper(async (req, res) => {
   if (!req.files) {
     throw new Error("Please upload a file");
