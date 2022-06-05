@@ -6,5 +6,10 @@
 }
 
 .Card {
-    width: 34rem !important;
+  width: 34rem !important;
+}
+
+.skeleton {
+  width: 340px !important;
+  height: 255px !important;
 }

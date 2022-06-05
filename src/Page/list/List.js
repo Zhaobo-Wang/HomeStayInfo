@@ -1,7 +1,7 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React from "react";
 import "./list.css";
-import { Card, Spin, Button } from "antd";
+import { Card, Spin, Button, Skeleton, Image, message } from "antd";
 import {
   DeleteOutlined,
   StarOutlined,
@@ -16,6 +16,7 @@ class List extends React.Component {
     spin: false,
     star: false,
     count: 0,
+    imageError: false,
   };
 
   async componentDidMount() {
@@ -28,7 +29,7 @@ class List extends React.Component {
       // const forms = response.data.forms;
       // console.log(response.data.forms);
     } catch (error) {
-      console.log(error);
+      message.error(error);
     }
   }
 
@@ -37,7 +38,7 @@ class List extends React.Component {
       await axios.delete(`http://localhost:5000/api/v1/${id}`);
       this.componentDidMount();
     } catch (error) {
-      console.log("handle delete function is not working");
+      message.error("handle delete function is not working");
     }
   }
 
@@ -47,7 +48,7 @@ class List extends React.Component {
       this.setState({ star: true });
       this.componentDidMount();
     } catch (error) {
-      console.log("handle star function is not working");
+      message.error("handle star function is not working");
     }
   }
 
@@ -57,7 +58,15 @@ class List extends React.Component {
       this.setState({ count: this.state.count + 1 });
       this.componentDidMount();
     } catch (error) {
-      console.log("handle like function is not working");
+      message.error("handle like function is not working");
+    }
+  }
+
+  async handleImageError() {
+    try {
+      this.setState({ imageError: true });
+    } catch (error) {
+      message.error("handle image error function is not working");
     }
   }
 
@@ -72,7 +81,17 @@ class List extends React.Component {
             return (
               <Card
                 className="Card"
-                cover={<img src={form.image}/>}
+                cover={
+                  this.imageError ? (
+                    <Skeleton.Image className="skeleton" />
+                  ) : (
+                    <Image
+                      src={form.image}
+                      placeholder={<Skeleton.Image className="skeleton" />}
+                      onError={this.handleImageError}
+                    />
+                  )
+                }
                 hoverable
                 actions={[
                   <Button
@@ -108,9 +127,7 @@ class List extends React.Component {
                 <p>
                   <h1 className="line">Contact: {form.host_name}</h1>
                 </p>
-                <p>
-                  {form.imageDate}
-                </p>
+                <p>{form.imageDate}</p>
                 {/* <p>
                   <h1 className="line">Email: </h1>
                   {form.email}
