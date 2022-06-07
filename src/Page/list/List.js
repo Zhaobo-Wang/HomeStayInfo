@@ -127,7 +127,19 @@ class List extends React.Component {
                 <p>
                   <h1 className="line">Contact: {form.host_name}</h1>
                 </p>
-                <p>{form.imageDate}</p>
+                <p>
+                  Post on{" "}
+                  {new Date().getDate() < 10
+                    ? (form.imageDate.substring(9, 10) ===
+                      String(new Date().getDate())
+                      ? "Today"
+                      : form.imageDate.substring(0, 10))
+                    : (form.imageDate.substring(8, 10) ===
+                      String(new Date().getDate())
+                    ? "Today"
+                    : form.imageDate.substring(0, 10))}
+                </p>
+                {/* 以上逻辑说明， 当date < 10 的时候，只取最后一位比较 例如（6===6） ， date > 10 的时候， 取 两位进行比较 例如（13===13）   */}
                 {/* <p>
                   <h1 className="line">Email: </h1>
                   {form.email}
