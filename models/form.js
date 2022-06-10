@@ -27,6 +27,14 @@ const FormSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please provide an address"],
   },
+  country: {
+    type: String,
+    required: [true, "Please select the country"],
+  },
+  city: {
+    type: String,
+    required: [true, "Please select the city"],
+  },
   image: {
     type: String,
     required: [true, "Please provide some images"],

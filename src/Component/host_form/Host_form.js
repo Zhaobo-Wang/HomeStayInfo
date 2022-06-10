@@ -1,11 +1,61 @@
 import React, { useState } from "react";
 import "./Host_form.css";
-import { Form, Input, Button, Checkbox, message, Upload } from "antd";
+import { Form, Input, Button, Checkbox, message, Upload, Select } from "antd";
 import axios from "axios";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 import ImgCrop from "antd-img-crop";
 
 const Host_form = () => {
+  const countryData = ["CA", "USA", "AU", "UK"];
+  const cityData = {
+    CA: [
+      "Toronto",
+      "Montreal",
+      "Calgary",
+      "Ottawa",
+      "Edmonton",
+      "Winnipeg",
+      "Mississauga",
+      "Vancouver",
+      "Brampton",
+      "Hamilton",
+    ],
+    USA: [
+      "New York City",
+      "Los Angeles",
+      "Chicago",
+      "Houston",
+      "Phoenix",
+      "Philadelphia",
+      "San Diego",
+      "Dallas",
+      "San Jose",
+      "Seattle",
+    ],
+    AU: [
+      "Sydney",
+      "Melbourne",
+      "Brisbane",
+      "Perth",
+      "Alelaide",
+      "GoldCoast",
+      "Darwin",
+      "Newcastle",
+      "Canberra",
+    ],
+    UK: [
+      "London",
+      "Birmingham",
+      "Glasgow",
+      "Bristol",
+      "Liverpool",
+      "Sheffield",
+      "Manchester",
+      "Leeds",
+      "Edinburgh",
+      "Leicester",
+    ],
+  };
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone_number, setPhone_number] = useState("");
@@ -13,12 +63,14 @@ const Host_form = () => {
   const [loading, setLoading] = useState(false);
   const [imageSrc, setImageSrc] = useState("");
   const [imageDate, setImageDate] = useState("");
-
+  const { Option } = Select;
+  const [cities, setCities] = useState(cityData[countryData[0]]);
+  const [secondCity, setSecondCity] = useState(cityData[countryData[0]][0]);
+  const [country, setCountry] = useState("CA");
   const layout = {
     labelCol: { span: 9 },
     wrapperCol: { span: 15 },
   };
-
   const handleUpload = async (info) => {
     try {
       if (info.file.status === "uploading") {
@@ -33,13 +85,14 @@ const Host_form = () => {
       );
     }
   };
-
   const handleFinish = async () => {
     try {
       await axios.post("http://localhost:5000/api/v1", {
         host_name: name,
         email: email,
         phone_number: phone_number,
+        country: country,
+        city: secondCity,
         apartment_address: apartment_address,
         image: imageSrc,
         imageDate: imageDate,
@@ -48,6 +101,20 @@ const Host_form = () => {
     } catch (error) {
       message.error(error.response.data.msg.split(",")[0]);
     }
+  };
+
+  const handleCountryChange = async (value) => {
+    try {
+      setCountry(value);
+      setCities(cityData[value]);
+      setSecondCity(cityData[value][0]);
+    } catch (error) {
+      message.error("handle country change event is broken");
+    }
+  };
+
+  const onSecondCityChange = (value) => {
+    setSecondCity(value);
   };
 
   return (
@@ -76,6 +143,28 @@ const Host_form = () => {
             setPhone_number(e.target.value);
           }}
         />
+      </Form.Item>
+      <Form.Item label="Country/City Address">
+        <Select
+          defaultValue={countryData[0]}
+          style={{ width: "33%", marginRight: "2rem" }}
+          onChange={(e) => {
+            handleCountryChange(e);
+          }}
+        >
+          {countryData.map((country) => (
+            <Option key={country}>{country}</Option>
+          ))}
+        </Select>
+        <Select
+          value={secondCity}
+          style={{ width: "60%" }}
+          onChange={(e) => onSecondCityChange(e)}
+        >
+          {cities.map((city) => (
+            <Option key={city}>{city}</Option>
+          ))}
+        </Select>
       </Form.Item>
       <Form.Item label="House/Apartment Address">
         <Input

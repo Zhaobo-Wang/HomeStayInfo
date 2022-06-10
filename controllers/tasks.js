@@ -3,8 +3,13 @@ const tryCatchWrapper = require("../middleware/tryCatchWrapper");
 
 // [Get] get all forms
 const getAllForm = tryCatchWrapper(async (req, res) => {
-  const forms = await FormSchema.find({});
-  res.status(200).json({ forms });
+  if (req.query) {
+    const forms = await FormSchema.find(req.query);
+    res.status(200).json({ forms });
+  } else {
+    const forms = await FormSchema.find({});
+    res.status(200).json({ forms });
+  }
 });
 
 // [Get] get all forms with star
