@@ -197,4 +197,42 @@ FrontEnd Access a lastModified for the image Date property
 BackEnd Add to the backend schema
 FrontEnd Display in the card for the date
 FrontEnd changing lastModified Date in a human-readable way
+_____________________________________________________________________________________
+
+<2022.06 FrontEnd Selection Country/City Feature Build>
+
+Describe:
+Selection different country first, then select corresponding city in this country 
+For example. Canada: toronto/ vancouver/ montreal/ ottawa/ alberta
+             Austrila: melbern/ sydney/ darwin/ perls/ brunstban
+            
+FrontEnd Write down the country and city json sheet
+FrontEnd Selection UI build
+FrontEnd Select login, selection country and corresponding city
+BackEnd  Send the data to submit the button (axios.post)/ backend get the data
+_____________________________________________________________________________________
+
+<2022.06 CSS/FrontEnd Responsive Design--WeiXin Mini App / APP Layout I>
+
+Describe:
+In order to make responsive design for different kinds of media, It needs to reconstruct the layout and css.
+
+FrontEnd/CSS Reconstruct the main page
+FrontEnd/CSS Responsive for the form page
+FrontEnd/CSS Make a tabBar Component UI
+_____________________________________________________________________________________
+
+<2022.06 CSS/FrontEnd Responsive Design--WeiXin Mini App / APP Layout II>
+
+Describe:
+In order to make responsive design for different kinds of media, It needs to reconstruct the layout and css.
+Bug Fix:
+Tab-bar rendering problem, it will render perfectly in app, but not render in web
+When display none (or position fixed, some other property is not working), try with add a parent div
+
+FrontEnd/CSS Make tarBar Component Routes
+FrontEnd/CSS Make tarBar component in the page bottom and sticky to bottom
+FrontEnd/CSS Responsive for Header Component
+FrontEnd/CSS Responsive for login page
+
 
