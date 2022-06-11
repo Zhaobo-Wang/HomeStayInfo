@@ -1,0 +1,49 @@
+{
+  "CA": [
+    "Toronto",
+    "Montreal",
+    "Calgary",
+    "Ottawa",
+    "Edmonton",
+    "Winnipeg",
+    "Mississauga",
+    "Vancouver",
+    "Brampton",
+    "Hamilton"
+  ],
+  "USA": [
+    "NewYorkCity",
+    "LosAngeles",
+    "Chicago",
+    "Houston",
+    "Phoenix",
+    "Philadelphia",
+    "SanDiego",
+    "Dallas",
+    "SanJose",
+    "Seattle"
+  ],
+  "AU": [
+    "Sydney",
+    "Melbourne",
+    "Brisbane",
+    "Perth",
+    "Alelaide",
+    "GoldCoast",
+    "Darwin",
+    "Newcastle",
+    "Canberra"
+  ],
+  "UK": [
+    "London",
+    "Birmingham",
+    "Glasgow",
+    "Bristol",
+    "Liverpool",
+    "Sheffield",
+    "Manchester",
+    "Leeds",
+    "Edinburgh",
+    "Leicester"
+  ]
+}
