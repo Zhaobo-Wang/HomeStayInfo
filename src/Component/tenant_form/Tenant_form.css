@@ -3,3 +3,19 @@
     flex-direction: row;
     justify-content: right;
 }
+
+.form {
+    width: 60rem;
+    padding: 5rem;
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .form {
+      width: 30rem;
+      padding: 5rem;
+    }
+
+    .tenant-form-input:not(:first-child) {
+        margin-top: -1.5rem !important;
+      }
+  }  

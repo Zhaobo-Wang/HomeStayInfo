@@ -118,33 +118,29 @@ const Host_form = () => {
   };
 
   return (
-    <Form
-      {...layout}
-      style={{ width: "60rem", padding: "5rem" }}
-      className="form"
-    >
-      <Form.Item label="Host Name">
+    <Form {...layout} className="form">
+      <Form.Item label="Host Name" className="host-form-input">
         <Input
           onChange={(e) => {
             setName(e.target.value);
           }}
         />
       </Form.Item>
-      <Form.Item label="Email">
+      <Form.Item label="Email" className="host-form-input">
         <Input
           onChange={(e) => {
             setEmail(e.target.value);
           }}
         />
       </Form.Item>
-      <Form.Item label="Phone Number">
+      <Form.Item label="Phone Number" className="host-form-input">
         <Input
           onChange={(e) => {
             setPhone_number(e.target.value);
           }}
         />
       </Form.Item>
-      <Form.Item label="Country/City Address">
+      <Form.Item label="Country/City Address" className="host-form-input">
         <Select
           defaultValue={countryData[0]}
           style={{ width: "33%", marginRight: "2rem" }}
@@ -166,14 +162,14 @@ const Host_form = () => {
           ))}
         </Select>
       </Form.Item>
-      <Form.Item label="House/Apartment Address">
+      <Form.Item label="House/Apartment Address" className="host-form-input">
         <Input
           onChange={(e) => {
             setApartment_address(e.target.value);
           }}
         />
       </Form.Item>
-      <Form.Item label="Cover Image">
+      <Form.Item label="Cover Image" className="host-form-input">
         <ImgCrop
           rotate
           modalTitle="Edit your Cover!"

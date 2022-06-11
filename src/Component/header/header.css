@@ -1,8 +1,45 @@
 .Header {
-  padding: 1rem;
+  padding: 0 1rem;
+  background-color: rgb(74, 158, 154) !important;
 }
 
 .login_button {
   float: right;
   color: black !important;
+}
+
+.welcome_button {
+  float: right;
+  color: black !important;
+}
+
+.login_icon {
+  display: none;
+}
+
+.header_title-box {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 500px) {
+  .header_title {
+    font-size: medium !important;
+    margin: 1rem;
+  }
+  .Header {
+    padding: 1rem 0rem;
+    width: 100%;
+  }
+
+  .login_button {
+    display: none;
+  }
+  .welcome_button {
+    float: right;
+  }
+
+  .login_icon {
+    display: inline-block;
+    float: right;
+  }
 }

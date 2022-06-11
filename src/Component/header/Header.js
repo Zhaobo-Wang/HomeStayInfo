@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./header.css";
 import { Typography, Button } from "antd";
-import { SketchOutlined } from "@ant-design/icons";
+import { SketchOutlined, SettingOutlined } from "@ant-design/icons";
 import Dialog from "../dialog/Dialog";
 import { UserNameContext } from "../../Context/UserNameContext";
 
@@ -20,28 +20,40 @@ const Header = () => {
 
   return (
     <div className="Header">
-      <Title style={{ color: "white" }} level={2}>
-        <SketchOutlined />
-        HOME_STAY Info
-        <Button 
-          type="text" 
-          size="large" 
-          className="login_button"
-        >
+      <div className="header_title-box">
+        <Title style={{ color: "white" }} level={2} className="header_title">
+          <SketchOutlined />
+          HOME_STAY Info
+        </Title>
+      </div>
+      <div className="welcome_button">
+        <Button type="text" size="large">
           Welcome, {userName.userName}
         </Button>
+      </div>
+      <div className="login_button">
         <Button
           type="text"
           size="large"
-          className="login_button"
           onClick={(e) => {
             openDialog(e);
           }}
         >
           Setting
         </Button>
-        <Dialog openModal={openModal} setOpenModal={setOpenModal} />
-      </Title>
+      </div>
+      <div className="login_icon">
+        <Button
+          type="text"
+          size="large"
+          onClick={(e) => {
+            openDialog(e);
+          }}
+        >
+          <SettingOutlined />
+        </Button>
+      </div>
+      <Dialog openModal={openModal} setOpenModal={setOpenModal} />
     </div>
   );
 };

@@ -3,10 +3,18 @@
 html {
   font-size: 62.5%;
 }
+.web {
+  display: block;
+}
+
+.app {
+  display: none;
+}
 
 .MainHead {
   background-color: rgb(74, 158, 154) !important;
 }
+
 .MainSider {
   min-width: 20% !important;
   background-color: rgb(179, 212, 205) !important;
@@ -16,8 +24,40 @@ html {
   background-color: rgb(236, 250, 245) !important;
 }
 
-.MainFooter {
+.MainFooter-web {
   background-color: rgb(74, 158, 154) !important;
   color: white !important;
   /* background-color: rgb(140, 167, 140) !important; */
+}
+.footSection {
+  display: block;
+}
+
+.MainFooter-app {
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .web {
+    display: none;
+  }
+  .app {
+    display: block;
+    position: relative;
+  }
+  .MainContent {
+    padding: 1rem;
+    min-width: 100% !important;
+    min-height: 86vh !important;
+    background-color: rgb(236, 250, 245) !important;
+  }
+
+  .tab_bar {
+    display: block;
+    min-height: 6vh !important;
+    min-width: 100% !important;
+    border-top: solid 1px var(--adm-color-border);
+    position: fixed;
+    bottom: 0;
+  }
 }

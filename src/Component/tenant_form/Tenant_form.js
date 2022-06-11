@@ -10,7 +10,6 @@ const Tenant_form = () => {
   return (
     <Form
       {...layout}
-      style={{ width: "60rem", padding: "5rem" }}
       className="form"
     >
       <Form.Item
@@ -21,6 +20,7 @@ const Tenant_form = () => {
             message: "Please input your name!",
           },
         ]}
+        className="tenant-form-input"
       >
         <Input />
       </Form.Item>
@@ -32,6 +32,7 @@ const Tenant_form = () => {
             message: "Please input your gender!",
           },
         ]}
+        className="tenant-form-input"
       >
         <Input />
       </Form.Item>
@@ -43,6 +44,7 @@ const Tenant_form = () => {
             message: "Please input your phone number!",
           },
         ]}
+        className="tenant-form-input"
       >
         <Input />
       </Form.Item>
@@ -54,6 +56,7 @@ const Tenant_form = () => {
             message: "Please input your email!",
           },
         ]}
+        className="tenant-form-input"
       >
         <Input />
       </Form.Item>

@@ -17,29 +17,52 @@ export default class Login extends Component {
   render() {
     const { Sider, Content } = Layout;
     return (
-      <Layout>
-        <Sider className="loginSider">
-          <Image src={LoginImage} className="loginImage slide-left" />
-        </Sider>
-        <Layout>
-          <Content className="loginContent">
-            <div className="loginForm slide-bottom">
-              <Portable userSignUpAlready={this.state.userSignUpAlready} />
-              <Button
-                type="text"
-                className="loginTextButton"
-                onClick={(e) => {
-                  this.handleClick(e);
-                }}
-              >
-                {this.state.userSignUpAlready
-                  ? "New user for register"
-                  : "Already sign up, Login directly"}
-              </Button>
-            </div>
-          </Content>
-        </Layout>
-      </Layout>
+      <>
+        <div className="web-login">
+          <Layout>
+            <Sider className="loginSider">
+              <Image src={LoginImage} className="loginImage slide-left" />
+            </Sider>
+            <Layout>
+              <Content className="loginContent">
+                <div className="loginForm slide-bottom">
+                  <Portable userSignUpAlready={this.state.userSignUpAlready} />
+                  <Button
+                    type="text"
+                    className="loginTextButton"
+                    onClick={(e) => {
+                      this.handleClick(e);
+                    }}
+                  >
+                    {this.state.userSignUpAlready
+                      ? "New user for register"
+                      : "Already sign up, Login directly"}
+                  </Button>
+                </div>
+              </Content>
+            </Layout>
+          </Layout>
+        </div>
+        <div className="app-login">
+          <div className="app-login-image">
+          <Image src={LoginImage} className="loginImage" />     
+          </div>
+          <div className="loginForm">
+            <Portable userSignUpAlready={this.state.userSignUpAlready} />
+            <Button
+              type="text"
+              className="loginTextButton"
+              onClick={(e) => {
+                this.handleClick(e);
+              }}
+            >
+              {this.state.userSignUpAlready
+                ? "New user for register"
+                : "Already sign up, Login directly"}
+            </Button>
+          </div>
+        </div>
+      </>
     );
   }
 }
