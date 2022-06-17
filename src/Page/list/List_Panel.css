@@ -1,0 +1,12 @@
+.list_panel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem;
+}
+
+.radio_group_panel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
