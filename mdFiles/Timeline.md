@@ -199,7 +199,7 @@ FrontEnd Display in the card for the date
 FrontEnd changing lastModified Date in a human-readable way
 _____________________________________________________________________________________
 
-<2022.06 FrontEnd Selection Country/City Feature Build>
+<2022.06 FrontEnd Selection Country/City Feature Build on Form Page I>
 
 Describe:
 Selection different country first, then select corresponding city in this country 
@@ -234,5 +234,26 @@ FrontEnd/CSS Make tarBar Component Routes
 FrontEnd/CSS Make tarBar component in the page bottom and sticky to bottom
 FrontEnd/CSS Responsive for Header Component
 FrontEnd/CSS Responsive for login page
+————————————————————————————————————————————————————————————————————————————————————————
 
+<2022.06 BackEnd Selection Country/City Feature Build II>
 
+Describe:
+FrontEnd send the user data about their address area(country/city), according to their query, we could get
+the form by different country (their params and query)
+
+BackEnd change the form schema
+BackEnd Add backend query(selection location)
+BackEnd test with POSTMAN(params)
+__________________________________________________________________________________________
+
+<2022.06 FrontEnd Selection Country/City Feature Build in list page III>
+
+Describe: 
+All backend forms are ready for use, when user clicks the area location in the list page, the page could display
+corresponding forms in their specific area
+
+FrontEnd Change list page into two panels, contains selection area and display area
+FrontEnd Add country/city query selection UI in frontEnd list page
+FrontEnd Add logic and when users click the query, it returns to get the specific country forms
+FrontEnd Refine the list page code

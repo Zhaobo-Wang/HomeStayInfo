@@ -3,13 +3,55 @@ const tryCatchWrapper = require("../middleware/tryCatchWrapper");
 
 // [Get] get all forms
 const getAllForm = tryCatchWrapper(async (req, res) => {
-  console.log(req.query);
-  if (req.query) {
-    const forms = await FormSchema.find(req.query);
-    res.status(200).json({ forms });
+  const { country, city, sort } = req.query;
+  const queryObject = {};
+  console.log(sort); // sort is a string type in here
+  console.log(country);
+  console.log(city);
+  // queryObject.country = country;
+  // queryObject.city = city;
+  // queryObject.sort = sort;
+  if (country !== undefined) {
+    queryObject.country = country;
+    let sortBooleanValue = sort === "true";
+    queryObject.sort = sortBooleanValue;
+    console.log(queryObject);
+    if (queryObject.sort === true) {
+      const forms = await FormSchema.find(queryObject).sort("-imageDate");
+      res.status(200).json({ forms });
+      // recently post on this country [click choose country]
+    } else {
+      const forms = await FormSchema.find(queryObject).sort("imageDate");
+      res.status(200).json({ forms });
+      // early post on this country [click sort date / choose country]
+    }
+  } else if (city !== undefined) {
+    queryObject.city = city;
+    let sortBooleanValue = sort === "true";
+    queryObject.sort = sortBooleanValue;
+    console.log(queryObject);
+    if (queryObject.sort === true) {
+      const forms = await FormSchema.find(queryObject).sort("-imageDate");
+      res.status(200).json({ forms });
+      // recently post on this city [click choose city]
+    } else {
+      const forms = await FormSchema.find(queryObject).sort("imageDate");
+      res.status(200).json({ forms });
+      // early post on this city [click sort date / choose city]
+    }
   } else {
-    const forms = await FormSchema.find({});
-    res.status(200).json({ forms });
+    let sortBooleanValue = sort === "true";
+    queryObject.sort = sortBooleanValue;
+    console.log(queryObject);
+    if (queryObject.sort === true) {
+      const forms = await FormSchema.find({}).sort("-imageDate");
+      res.status(200).json({ forms });
+      // recently post on all forms [click nothing]
+    } else {
+      const forms = await FormSchema.find({}).sort("imageDate");
+      res.status(200).json({ forms });
+      // early post on all forms [click sort date]
+    }
   }
 });
 
