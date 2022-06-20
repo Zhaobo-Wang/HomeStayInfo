@@ -257,3 +257,13 @@ FrontEnd Change list page into two panels, contains selection area and display a
 FrontEnd Add country/city query selection UI in frontEnd list page
 FrontEnd Add logic and when users click the query, it returns to get the specific country forms
 FrontEnd Refine the list page code
+
+___________________________________________________________________________________________
+
+<2022.06 FrontEnd/BackEnd Sort Date Feature>
+
+Describe: According to the post date, user chould choose the date by post on recently or post on early
+
+BackEnd Different sort function logic works(need to work in all/differnt country/ different city) test on POSTMAN
+FrontEnd add UI button for user pick post date
+FrontEnd get the forms by axios.get for query sort
