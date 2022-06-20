@@ -11,26 +11,12 @@ const getAllForm = tryCatchWrapper(async (req, res) => {
   // queryObject.country = country;
   // queryObject.city = city;
   // queryObject.sort = sort;
-  if (country !== undefined) {
-    queryObject.country = country;
-    let sortBooleanValue = sort === "true";
-    queryObject.sort = sortBooleanValue;
-    console.log(queryObject);
-    if (queryObject.sort === true) {
-      const forms = await FormSchema.find(queryObject).sort("-imageDate");
-      res.status(200).json({ forms });
-      // recently post on this country [click choose country]
-    } else {
-      const forms = await FormSchema.find(queryObject).sort("imageDate");
-      res.status(200).json({ forms });
-      // early post on this country [click sort date / choose country]
-    }
-  } else if (city !== undefined) {
+  if (city !== undefined && city !== "") {
     queryObject.city = city;
     let sortBooleanValue = sort === "true";
     queryObject.sort = sortBooleanValue;
     console.log(queryObject);
-    if (queryObject.sort === true) {
+    if (queryObject.sort === false) {
       const forms = await FormSchema.find(queryObject).sort("-imageDate");
       res.status(200).json({ forms });
       // recently post on this city [click choose city]
@@ -39,11 +25,25 @@ const getAllForm = tryCatchWrapper(async (req, res) => {
       res.status(200).json({ forms });
       // early post on this city [click sort date / choose city]
     }
+  } else if (country !== undefined && country !== "") {
+    queryObject.country = country;
+    let sortBooleanValue = sort === "true";
+    queryObject.sort = sortBooleanValue;
+    console.log(queryObject);
+    if (queryObject.sort === false) {
+      const forms = await FormSchema.find(queryObject).sort("-imageDate");
+      res.status(200).json({ forms });
+      // recently post on this country [click choose country]
+    } else {
+      const forms = await FormSchema.find(queryObject).sort("imageDate");
+      res.status(200).json({ forms });
+      // early post on this country [click sort date / choose country]
+    }
   } else {
     let sortBooleanValue = sort === "true";
     queryObject.sort = sortBooleanValue;
     console.log(queryObject);
-    if (queryObject.sort === true) {
+    if (queryObject.sort === false) {
       const forms = await FormSchema.find({}).sort("-imageDate");
       res.status(200).json({ forms });
       // recently post on all forms [click nothing]

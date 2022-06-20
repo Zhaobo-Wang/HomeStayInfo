@@ -8,6 +8,7 @@ import {
   StarOutlined,
   LikeOutlined,
   StarFilled,
+  SlidersOutlined,
 } from "@ant-design/icons";
 import cityData from "../../DataSheet/CitySheet.json";
 import countryData from "../../DataSheet/CountrySheet.json";
@@ -23,6 +24,7 @@ class List extends React.Component {
     cities: cityData[countryData[0]],
     country: "",
     city: "",
+    sort: false,
   };
 
   async componentDidMount() {
@@ -30,7 +32,13 @@ class List extends React.Component {
     console.log(this.state.city);
     try {
       this.setState({ loading: true });
-      const response = await axios.get("http://localhost:5000/api/v1");
+      const response = await axios.get("http://localhost:5000/api/v1", {
+        params: {
+          sort: false,
+          city: this.state.city,
+          country: this.state.country,
+        },
+      });
       this.setState({ forms: response.data.forms });
       this.setState({ loading: false });
       this.setState({ star: false });
@@ -80,7 +88,7 @@ class List extends React.Component {
     try {
       this.setState({ country: value });
       this.setState({ cities: cityData[value] });
-      this.setState({ city: this.state.cities[0] });
+      // this.setState({ city: this.state.cities[0] });
       this.setState({ loading: true });
       const response = await axios.get("http://localhost:5000/api/v1", {
         params: {
@@ -112,6 +120,26 @@ class List extends React.Component {
     }
   }
 
+  async handleDateSort(e) {
+    console.log(e);
+    try {
+      this.setState({ sort: !this.state.sort });
+      this.setState({ loading: true });
+      const response = await axios.get("http://localhost:5000/api/v1", {
+        params: {
+          sort: this.state.sort,
+          city: this.state.city,
+          country: this.state.country,
+        },
+      });
+      this.setState({ forms: response.data.forms });
+      this.setState({ loading: false });
+      this.setState({ star: false });
+    } catch (error) {
+      message.error("handle Date Sort event is broken");
+    }
+  }
+
   render() {
     if (this.state.loading === true) {
       return <Spin size="large" />;
@@ -137,7 +165,6 @@ class List extends React.Component {
             </div>
             <div className="radio_group_panel_city">
               <Select
-                placeholder="city"
                 value={this.state.city}
                 style={{ width: "60%" }}
                 onChange={(e) => this.handlecityChange(e)}
@@ -146,6 +173,12 @@ class List extends React.Component {
                   <Select.Option key={city}>{city}</Select.Option>
                 ))}
               </Select>
+            </div>
+            <div className="group_panel_city">
+              <Button
+                icon={<SlidersOutlined />}
+                onClick={(e) => this.handleDateSort(e)}
+              />
             </div>
           </div>
         </div>
