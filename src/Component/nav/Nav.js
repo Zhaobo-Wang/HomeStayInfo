@@ -15,27 +15,27 @@ const Nav = () => {
   return (
     <div>
       <Menu className="nav" mode="horizontal">
-        <Menu.Item className="navItem" icon={<HomeOutlined />}>
+        <Menu.Item className="navItem" >
           <Link to="/main/" className="navText">
             Home
           </Link>
         </Menu.Item>
-        <Menu.Item className="navItem" icon={<ReadOutlined />}>
+        <Menu.Item className="navItem" >
           <Link to="/main/about" className="navText">
             About
           </Link>
         </Menu.Item>
-        <Menu.Item className="navItem" icon={<BookOutlined />}>
+        <Menu.Item className="navItem" >
           <Link to="/main/list" className="navText">
             HomeStay
           </Link>
         </Menu.Item>
-        <Menu.Item className="navItem" icon={<HeartOutlined />}>
+        <Menu.Item className="navItem" >
           <Link to="/main/star" className="navText">
             Favorite
           </Link>
         </Menu.Item>
-        <Menu.Item className="navItem" icon={<PlusOutlined />}>
+        <Menu.Item className="navItem" >
           <Link to="/main/form" className="navText">
             Post
           </Link>

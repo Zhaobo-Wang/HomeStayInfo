@@ -29,9 +29,9 @@ body {
 }
 
 .MainFooter-web {
-  height: 10rem;
+  height: 12vw;
   width: 100%;
-  background-color: #E8E6E7 !important;
+  background-color: #dedede !important;
   color: white !important;
   /* background-color: rgb(140, 167, 140) !important; */
 }

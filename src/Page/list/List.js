@@ -145,35 +145,41 @@ class List extends React.Component {
       return <Spin size="large" />;
     }
     return (
-      <>
+      <div className="list-page">
         <div className="list_panel">
-          <h1 className="list_title">Display All HomeStay Panel</h1>
+          <div className="list_title">
+            <h1>Display All HomeStay Panel</h1>
+          </div>
           <div className="radio_group_panel">
-            <Select
-              placeholder="country"
-              value={this.state.country}
-              style={{ width: "33%", marginRight: "2rem", display: "inline-block" }}
-              onChange={(e) => {
-                this.handleCountryChange(e);
-              }}
-            >
-              {countryData.map((country) => (
-                <Select.Option key={country}>{country}</Select.Option>
-              ))}
-            </Select>
-            <Select
-              value={this.state.city}
-              style={{ width: "33%" }}
-              onChange={(e) => this.handlecityChange(e)}
-            >
-              {this.state.cities.map((city) => (
-                <Select.Option key={city}>{city}</Select.Option>
-              ))}
-            </Select>
-            <Button
-              icon={<SlidersOutlined />}
-              onClick={(e) => this.handleDateSort(e)}
-            />
+            <div className="radio-group-panel-1">
+              <Select
+                placeholder="country"
+                value={this.state.country}
+                onChange={(e) => {
+                  this.handleCountryChange(e);
+                }}
+              >
+                {countryData.map((country) => (
+                  <Select.Option key={country}>{country}</Select.Option>
+                ))}
+              </Select>
+            </div>
+            <div className="radio-group-panel-1">
+              <Select
+                value={this.state.city}
+                onChange={(e) => this.handlecityChange(e)}
+              >
+                {this.state.cities.map((city) => (
+                  <Select.Option key={city}>{city}</Select.Option>
+                ))}
+              </Select>
+            </div>
+            <div className="radio-group-panel-1">
+              <Button
+                icon={<SlidersOutlined />}
+                onClick={(e) => this.handleDateSort(e)}
+              />
+            </div>
           </div>
         </div>
         <div className="List_layout">
@@ -256,7 +262,7 @@ class List extends React.Component {
             );
           })}
         </div>
-      </>
+      </div>
     );
   }
 }

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
 
 .Home-text {
     font-family: 'Rubik', sans-serif;
@@ -17,15 +17,15 @@
 
 .homepic-link {
     position: absolute;
-    right: 12rem;
+    right: 24rem;
     bottom: 5rem;
-    background-color: rgb(17, 213, 223);
+    background-color: #2DC0D9;
     color: white;
     font-size: 3rem;
-    font-family: 'Lora', serif;
+    font-family: 'Ubuntu', sans-serif;
     border: transparent 1px;
     border-radius: 8rem;
-    padding: 5rem 16rem;
+    padding: 2rem 9rem;
 }
 
 .homepic-image {

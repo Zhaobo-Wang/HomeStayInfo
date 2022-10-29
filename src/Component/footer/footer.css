@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+
+
 .homestay-footer {
     display: flex;
     flex-direction: row;
-    gap: 35rem;
-    margin-left: 10rem;
+    gap: 20vw;
+    padding: 2.5vw 12vw;
 }
 
 .homestay-footer-rightbox {
@@ -10,10 +14,11 @@
     flex-direction: column;
 }
 
-.footer-left{
-    margin-top: 1rem;
+.footer-left {
+    margin-top: 1vw;
 }
 
 .footer-text {
     color: black;
+    font-family: 'Ubuntu', sans-serif;
 }

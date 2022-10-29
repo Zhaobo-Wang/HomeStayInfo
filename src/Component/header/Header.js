@@ -28,10 +28,10 @@ const Header = () => {
         </Title>
         <Nav className="nav" />
         <div className="welcome_button">
-          <Button type="text" size="large">
+          <h4 className="welcome_text">
             Welcome, Jimbo!
             {/* {userName.userName} */}
-          </Button>
+          </h4>
         </div>
       </div>
     </div>

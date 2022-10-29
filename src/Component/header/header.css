@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
 .Header {
   padding: 0 1rem;
   background-color: #E8E6E7 !important;
@@ -10,6 +12,7 @@
 }
 
 .header_title {
+  margin-top: 1rem;
   align-items: center;
   justify-content: center;
   flex: 1;
@@ -22,7 +25,7 @@
   position: absolute;
   right: 32%;
   background-color: #E8E6E7 !important;
-  flex: 4;
+  flex: 5;
 }
 
 .welcome_button {
@@ -30,6 +33,11 @@
   flex: 1;
   position: absolute;
   right: 0;
+}
+
+.welcome_text {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: larger;
 }
 
 @media only screen and (max-width: 500px) {
