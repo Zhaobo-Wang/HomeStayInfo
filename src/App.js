@@ -20,7 +20,7 @@ const App = () => {
   const [authentication, setAuthentication] = useState(false);
   const [userName, setUserName] = useState("");
 
-  const { Header, Footer, Sider, Content } = Layout;
+  const { Header, Footer, Content } = Layout;
   return (
     <Routes>
       {authentication ? (
@@ -36,9 +36,6 @@ const App = () => {
                     </UserNameContext.Provider>
                   </Header>
                   <Layout>
-                    <Sider className="MainSider">
-                      <Nav className="nav" />
-                    </Sider>
                     <Content className="MainContent">
                       <Routes>
                         <Route path="/main/" element={<Home />} />

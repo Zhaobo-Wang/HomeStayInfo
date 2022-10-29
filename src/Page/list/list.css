@@ -13,3 +13,8 @@
   width: 340px !important;
   height: 255px !important;
 }
+
+.radio_group_panel{
+  display: flex;
+  flex-direction: row;
+}

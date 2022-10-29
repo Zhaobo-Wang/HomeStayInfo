@@ -1,0 +1,33 @@
+.Form_Radio_group {
+    margin-bottom: 2rem;
+    margin-left: 6rem;
+}
+
+.host-button {
+    width: 10rem;
+    height: 3rem;
+    border-radius: 5rem;
+    border: transparent 0.1rem;
+    background-color: white;
+    transition: all 0.8s;
+    margin-right: 1rem;
+}
+
+.host-button:active {
+    background-color: rgb(192, 191, 191);
+    transition: all 0s;
+}
+
+.tenant-button {
+    width: 10rem;
+    height: 3rem;
+    border-radius: 5rem;
+    border: transparent 0.1rem;
+    background-color: white;
+    transition: all 0.8s;
+}
+
+.tenant-button:active {
+    background-color: rgb(192, 191, 191);
+    transition: all 0s;
+}

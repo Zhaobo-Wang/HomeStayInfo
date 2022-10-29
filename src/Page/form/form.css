@@ -1,0 +1,9 @@
+.whole-form {
+    display: table;
+    margin: 0 auto;
+}
+
+.form-chosen {
+    display: flex;
+    justify-content: center;
+}

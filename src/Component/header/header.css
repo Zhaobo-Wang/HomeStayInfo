@@ -1,31 +1,44 @@
 .Header {
   padding: 0 1rem;
-  background-color: rgb(74, 158, 154) !important;
-}
-
-.login_button {
-  float: right;
-  color: black !important;
-}
-
-.welcome_button {
-  float: right;
-  color: black !important;
-}
-
-.login_icon {
-  display: none;
+  background-color: #E8E6E7 !important;
 }
 
 .header_title-box {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.header_title {
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+
+.nav {
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 32%;
+  background-color: #E8E6E7 !important;
+  flex: 4;
+}
+
+.welcome_button {
+  color: black !important;
+  flex: 1;
+  position: absolute;
+  right: 0;
 }
 
 @media only screen and (max-width: 500px) {
   .header_title {
     font-size: medium !important;
     margin: 1rem;
+    display: inline-block;
   }
+
   .Header {
     padding: 1rem 0rem;
     width: 100%;
@@ -34,8 +47,10 @@
   .login_button {
     display: none;
   }
+
   .welcome_button {
     float: right;
+    margin-right: 0;
   }
 
   .login_icon {

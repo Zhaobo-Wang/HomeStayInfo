@@ -3,10 +3,11 @@
 .app-login {
   display: none;
 }
+
 .loginSider {
   min-width: 49% !important;
   min-height: 100vh;
-  background-color: rgb(236, 250, 245) !important;
+  background-color: rgb(235, 240, 240) !important;
 }
 
 .loginImage {
@@ -25,16 +26,19 @@
     -webkit-transform: translateX(100px);
     transform: translateX(100px);
   }
+
   100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
   }
 }
+
 @keyframes slide-left {
   0% {
     -webkit-transform: translateX(100px);
     transform: translateX(100px);
   }
+
   100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -55,7 +59,7 @@
 }
 
 .loginContent {
-  background-color: rgb(236, 250, 245) !important;
+  background-color: rgb(235, 240, 240) !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,24 +90,29 @@
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
+
   50% {
     -webkit-transform: translateY(50px);
     transform: translateY(50px);
   }
+
   100% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 }
+
 @keyframes slide-bottom {
   0% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
+
   50% {
     -webkit-transform: translateY(50px);
     transform: translateY(50px);
   }
+
   100% {
     -webkit-transform: translateY(0);
     transform: translateY(0);
@@ -135,9 +144,11 @@
   .web-login {
     display: none;
   }
+
   .app-login {
     display: block;
   }
+
   .app-login-image {
     display: block;
     max-height: 42%;

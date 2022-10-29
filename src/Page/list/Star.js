@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Card, Spin } from "antd";
-import { DeleteOutlined, StarFilled, LikeOutlined } from "@ant-design/icons";
+import { Card, Spin, Button, Skeleton, Image, message, Select } from "antd";
+import {
+  DeleteOutlined,
+  StarOutlined,
+  LikeOutlined,
+  StarFilled,
+  SlidersOutlined,
+} from "@ant-design/icons";
 import "./list.css";
 
 export default class Star extends Component {
@@ -39,31 +45,78 @@ export default class Star extends Component {
         {this.state.forms?.map((form) => {
           return (
             <Card
-              title={form.host_name}
-              extra={<a href="#">More</a>}
-              style={{ width: 280 }}
+              className="Card"
+              cover={
+                this.imageError ? (
+                  <Skeleton.Image className="skeleton" />
+                ) : (
+                  <Image
+                    src={form.image}
+                    placeholder={<Skeleton.Image className="skeleton" />}
+                    onError={this.handleImageError}
+                  />
+                )
+              }
+              hoverable
               actions={[
-                <LikeOutlined />,
-                <StarFilled  style={{'color':'#F8F86B'}} onClick={()=>{this.handleStar(form._id)}}/>,
-                <DeleteOutlined
+                <Button
+                  type="text"
                   onClick={() => {
-                    this.handleDelete(form._id);
+                    this.handleLike(form._id);
                   }}
-                />,
+                >
+                  <LikeOutlined /> {form.count}
+                </Button>,
+                <Button
+                  type="text"
+                  onClick={() => {
+                    this.handleStar(form._id);
+                  }}
+                  icon={
+                    form.star ? (
+                      <StarFilled style={{ color: "#F8F86B" }} />
+                    ) : (
+                      <StarOutlined />
+                    )
+                  }
+                ></Button>,
+                <Button type="text">
+                  <DeleteOutlined
+                    onClick={() => {
+                      this.handleDelete(form._id);
+                    }}
+                  />
+                </Button>,
               ]}
             >
               <p>
-                <h1 className="line">Email: </h1>
-                {form.email}
+                <h1 className="line">Contact: {form.host_name}</h1>
               </p>
               <p>
-                <h1 className="line">Phone_number: </h1>
-                {form.phone_number}
+                Post on{" "}
+                {new Date().getDate() < 10
+                  ? form.imageDate.substring(9, 10) ===
+                    String(new Date().getDate())
+                    ? "Today"
+                    : form.imageDate.substring(0, 10)
+                  : form.imageDate.substring(8, 10) ===
+                    String(new Date().getDate())
+                    ? "Today"
+                    : form.imageDate.substring(0, 10)}
               </p>
-              <p>
-                <h1 className="line">Apartment_address: </h1>
-                {form.apartment_address}
-              </p>
+              {/* 以上逻辑说明， 当date < 10 的时候，只取最后一位比较 例如（6===6） ， date > 10 的时候， 取 两位进行比较 例如（13===13）   */}
+              {/* <p>
+                  <h1 className="line">Email: </h1>
+                  {form.email}
+                </p>
+                <p>
+                  <h1 className="line">Phone_number: </h1>
+                  {form.phone_number}
+                </p>
+                <p>
+                  <h1 className="line">Apartment_address: </h1>
+                  {form.apartment_address}
+                </p> */}
             </Card>
           );
         })}

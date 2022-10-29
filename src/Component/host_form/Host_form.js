@@ -119,28 +119,39 @@ const Host_form = () => {
 
   return (
     <Form {...layout} className="form">
-      <Form.Item label="Host Name" className="host-form-input">
+      <Form.Item label="Host Name">
         <Input
           onChange={(e) => {
             setName(e.target.value);
           }}
+          className="host-form-input"
         />
       </Form.Item>
-      <Form.Item label="Email" className="host-form-input">
+      <Form.Item label="Email">
         <Input
           onChange={(e) => {
             setEmail(e.target.value);
           }}
+          className="host-form-input"
         />
       </Form.Item>
-      <Form.Item label="Phone Number" className="host-form-input">
+      <Form.Item label="Phone Number">
         <Input
           onChange={(e) => {
             setPhone_number(e.target.value);
           }}
+          className="host-form-input"
         />
       </Form.Item>
-      <Form.Item label="Country/City Address" className="host-form-input">
+      <Form.Item label="House/Apartment Address">
+        <Input
+          onChange={(e) => {
+            setApartment_address(e.target.value);
+          }}
+          className="host-form-input"
+        />
+      </Form.Item>
+      <Form.Item label="Country/City Address">
         <Select
           defaultValue={countryData[0]}
           style={{ width: "33%", marginRight: "2rem" }}
@@ -162,13 +173,6 @@ const Host_form = () => {
           ))}
         </Select>
       </Form.Item>
-      <Form.Item label="House/Apartment Address" className="host-form-input">
-        <Input
-          onChange={(e) => {
-            setApartment_address(e.target.value);
-          }}
-        />
-      </Form.Item>
       <Form.Item label="Cover Image" className="host-form-input">
         <ImgCrop
           rotate
@@ -182,10 +186,11 @@ const Host_form = () => {
             onChange={handleUpload}
             showUploadList={true}
             action="http://localhost:5000/api/v1/uploads/cover"
+            style={{ borderRadius: "5rem" }}
           >
             <div className="upload-div">
               <div>{loading ? <LoadingOutlined /> : <PlusOutlined />}</div>
-              <div style={{ marginTop: "0.5rem" }}>
+              <div style={{ marginTop: "0.5rem"}}>
                 {loading ? "Uploading" : "Upload"}
               </div>
             </div>
@@ -205,6 +210,7 @@ const Host_form = () => {
             onClick={() => {
               handleFinish();
             }}
+            style={{ borderRadius: "5rem" }}
           >
             Sumbit
           </Button>

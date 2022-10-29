@@ -4,6 +4,7 @@ import { Typography, Button } from "antd";
 import { SketchOutlined, SettingOutlined } from "@ant-design/icons";
 import Dialog from "../dialog/Dialog";
 import { UserNameContext } from "../../Context/UserNameContext";
+import Nav from "../nav/Nav";
 
 const Header = () => {
   const { Title } = Typography;
@@ -25,35 +26,14 @@ const Header = () => {
           <SketchOutlined />
           HOME_STAY Info
         </Title>
+        <Nav className="nav" />
+        <div className="welcome_button">
+          <Button type="text" size="large">
+            Welcome, Jimbo!
+            {/* {userName.userName} */}
+          </Button>
+        </div>
       </div>
-      <div className="welcome_button">
-        <Button type="text" size="large">
-          Welcome, {userName.userName}
-        </Button>
-      </div>
-      <div className="login_button">
-        <Button
-          type="text"
-          size="large"
-          onClick={(e) => {
-            openDialog(e);
-          }}
-        >
-          Setting
-        </Button>
-      </div>
-      <div className="login_icon">
-        <Button
-          type="text"
-          size="large"
-          onClick={(e) => {
-            openDialog(e);
-          }}
-        >
-          <SettingOutlined />
-        </Button>
-      </div>
-      <Dialog openModal={openModal} setOpenModal={setOpenModal} />
     </div>
   );
 };

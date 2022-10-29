@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./form_choosen.css";
-import { Select, Radio } from "antd";
 
-const Form_choosen = ({setIdentity,Identity}) => {
+const Form_choosen = ({ setIdentity, Identity }) => {
 
 
   const handleEvent = (e) => {
@@ -11,10 +10,14 @@ const Form_choosen = ({setIdentity,Identity}) => {
   };
 
   return (
-    <Radio.Group onChange={handleEvent} value={Identity}>
-      <Radio.Button value="host">I'm Host</Radio.Button>
-      <Radio.Button value="tenant">I'm Tenant</Radio.Button>
-    </Radio.Group>
+    <div className="Form_Radio_group">
+      <button onClick={handleEvent} value="host" className="host-button">
+        I'm Host
+      </button>
+      <button onClick={handleEvent} value="tenant" className="tenant-button">
+        I'm Tenant
+      </button>
+    </div>
   );
 };
 

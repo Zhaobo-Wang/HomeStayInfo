@@ -1,0 +1,19 @@
+.homestay-footer {
+    display: flex;
+    flex-direction: row;
+    gap: 35rem;
+    margin-left: 10rem;
+}
+
+.homestay-footer-rightbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-left{
+    margin-top: 1rem;
+}
+
+.footer-text {
+    color: black;
+}

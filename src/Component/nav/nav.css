@@ -1,5 +1,11 @@
-.nav {
-  background-color: rgb(179, 212, 205) !important;
-  height: 100%;
-  overflow: hidden;
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Rubik:wght@500&display=swap');
+
+
+.nav:hover {
+  color: white !important;
+}
+
+.navText {
+  font-family: 'Crimson Text', serif;
+  font-size: small;
 }

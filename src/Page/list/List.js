@@ -147,39 +147,33 @@ class List extends React.Component {
     return (
       <>
         <div className="list_panel">
-          <h1 className="list_title">List Panel</h1>
+          <h1 className="list_title">Display All HomeStay Panel</h1>
           <div className="radio_group_panel">
-            <div className="radio_group_panel_country">
-              <Select
-                placeholder="country"
-                value={this.state.country}
-                style={{ width: "33%", marginRight: "2rem" }}
-                onChange={(e) => {
-                  this.handleCountryChange(e);
-                }}
-              >
-                {countryData.map((country) => (
-                  <Select.Option key={country}>{country}</Select.Option>
-                ))}
-              </Select>
-            </div>
-            <div className="radio_group_panel_city">
-              <Select
-                value={this.state.city}
-                style={{ width: "60%" }}
-                onChange={(e) => this.handlecityChange(e)}
-              >
-                {this.state.cities.map((city) => (
-                  <Select.Option key={city}>{city}</Select.Option>
-                ))}
-              </Select>
-            </div>
-            <div className="group_panel_city">
-              <Button
-                icon={<SlidersOutlined />}
-                onClick={(e) => this.handleDateSort(e)}
-              />
-            </div>
+            <Select
+              placeholder="country"
+              value={this.state.country}
+              style={{ width: "33%", marginRight: "2rem", display: "inline-block" }}
+              onChange={(e) => {
+                this.handleCountryChange(e);
+              }}
+            >
+              {countryData.map((country) => (
+                <Select.Option key={country}>{country}</Select.Option>
+              ))}
+            </Select>
+            <Select
+              value={this.state.city}
+              style={{ width: "33%" }}
+              onChange={(e) => this.handlecityChange(e)}
+            >
+              {this.state.cities.map((city) => (
+                <Select.Option key={city}>{city}</Select.Option>
+              ))}
+            </Select>
+            <Button
+              icon={<SlidersOutlined />}
+              onClick={(e) => this.handleDateSort(e)}
+            />
           </div>
         </div>
         <div className="List_layout">
@@ -242,8 +236,8 @@ class List extends React.Component {
                       : form.imageDate.substring(0, 10)
                     : form.imageDate.substring(8, 10) ===
                       String(new Date().getDate())
-                    ? "Today"
-                    : form.imageDate.substring(0, 10)}
+                      ? "Today"
+                      : form.imageDate.substring(0, 10)}
                 </p>
                 {/* 以上逻辑说明， 当date < 10 的时候，只取最后一位比较 例如（6===6） ， date > 10 的时候， 取 两位进行比较 例如（13===13）   */}
                 {/* <p>
