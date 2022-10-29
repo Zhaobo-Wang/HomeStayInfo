@@ -1,10 +1,17 @@
 @import "~antd/dist/antd.css";
 
-html {
+html,
+body {
   font-size: 62.5%;
+  padding: 0;
+  margin: 0;
+  height: 100%;
 }
+
 .web {
   display: block;
+  height: 100%;
+  position: relative;
 }
 
 .app {
@@ -12,23 +19,23 @@ html {
 }
 
 .MainHead {
-  background-color: rgb(74, 158, 154) !important;
+  background-color: #E8E6E7 !important;
 }
 
-.MainSider {
-  min-width: 20% !important;
-  background-color: rgb(179, 212, 205) !important;
-}
 .MainContent {
-  padding: 4rem;
-  background-color: rgb(236, 250, 245) !important;
+  height: 100%;
+  width: 100%;
+  background-color: #E8E6E7 !important;
 }
 
 .MainFooter-web {
-  background-color: rgb(74, 158, 154) !important;
+  height: 12vw;
+  width: 100%;
+  background-color: #dedede !important;
   color: white !important;
   /* background-color: rgb(140, 167, 140) !important; */
 }
+
 .footSection {
   display: block;
 }
@@ -41,10 +48,12 @@ html {
   .web {
     display: none;
   }
+
   .app {
     display: block;
     position: relative;
   }
+
   .MainContent {
     padding: 1rem;
     min-width: 100% !important;

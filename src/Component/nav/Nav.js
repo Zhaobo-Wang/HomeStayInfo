@@ -5,41 +5,39 @@ import { Menu } from "antd";
 import {
   HomeOutlined,
   FormOutlined,
-  UnorderedListOutlined,
   ReadOutlined,
   HeartOutlined,
   BookOutlined,
+  PlusOutlined
 } from "@ant-design/icons";
 
 const Nav = () => {
   return (
     <div>
-      <Menu className="nav">
-        <Menu.Item className="navItem" icon={<HomeOutlined />}>
+      <Menu className="nav" mode="horizontal">
+        <Menu.Item className="navItem" >
           <Link to="/main/" className="navText">
             Home
           </Link>
         </Menu.Item>
-        <Menu.Item className="navItem" icon={<ReadOutlined />}>
+        <Menu.Item className="navItem" >
           <Link to="/main/about" className="navText">
             About
           </Link>
         </Menu.Item>
-        <Menu.SubMenu title="List" icon={<UnorderedListOutlined />}>
-          <Menu.Item className="navItem" icon={<BookOutlined />}>
-            <Link to="/main/list" className="navText">
-              All
-            </Link>
-          </Menu.Item>
-          <Menu.Item className="navItem" icon={<HeartOutlined />}>
-            <Link to="/main/star" className="navText">
-              Favorite
-            </Link>
-          </Menu.Item>
-        </Menu.SubMenu>
-        <Menu.Item className="navItem" icon={<FormOutlined />}>
+        <Menu.Item className="navItem" >
+          <Link to="/main/list" className="navText">
+            HomeStay
+          </Link>
+        </Menu.Item>
+        <Menu.Item className="navItem" >
+          <Link to="/main/star" className="navText">
+            Favorite
+          </Link>
+        </Menu.Item>
+        <Menu.Item className="navItem" >
           <Link to="/main/form" className="navText">
-            Form
+            Post
           </Link>
         </Menu.Item>
       </Menu>

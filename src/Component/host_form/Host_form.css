@@ -10,8 +10,16 @@
 }
 
 .form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
   width: 60rem;
   padding: 5rem;
+}
+
+.host-form-input {
+  border-radius: 5rem !important;
 }
 
 @media only screen and (max-width: 500px) {

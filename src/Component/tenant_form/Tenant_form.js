@@ -20,9 +20,8 @@ const Tenant_form = () => {
             message: "Please input your name!",
           },
         ]}
-        className="tenant-form-input"
       >
-        <Input />
+        <Input className="host-form-input" />
       </Form.Item>
       <Form.Item
         label="Gender"
@@ -32,9 +31,8 @@ const Tenant_form = () => {
             message: "Please input your gender!",
           },
         ]}
-        className="tenant-form-input"
       >
-        <Input />
+        <Input className="host-form-input" />
       </Form.Item>
       <Form.Item
         label="Phone Number"
@@ -44,9 +42,8 @@ const Tenant_form = () => {
             message: "Please input your phone number!",
           },
         ]}
-        className="tenant-form-input"
       >
-        <Input />
+        <Input className="host-form-input" />
       </Form.Item>
       <Form.Item
         label="Email"
@@ -56,9 +53,8 @@ const Tenant_form = () => {
             message: "Please input your email!",
           },
         ]}
-        className="tenant-form-input"
       >
-        <Input />
+        <Input className="host-form-input" />
       </Form.Item>
       <div class="bot-box">
         <Form.Item>
@@ -68,7 +64,7 @@ const Tenant_form = () => {
           <Checkbox>Rent</Checkbox>
         </Form.Item>
         <Form.Item>
-          <Button type="primary">Sumbit</Button>
+          <Button type="primary" style={{ borderRadius: "5rem" }}>Sumbit</Button>
         </Form.Item>
       </div>
     </Form>

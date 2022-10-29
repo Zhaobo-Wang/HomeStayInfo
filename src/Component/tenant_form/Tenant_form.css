@@ -1,21 +1,26 @@
-.bot-box{
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
+.bot-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
 }
 
 .form {
-    width: 60rem;
+  width: 60rem;
+  padding: 5rem;
+}
+
+.host-form-input {
+  border-radius: 5rem !important;
+}
+
+
+@media only screen and (max-width: 500px) {
+  .form {
+    width: 30rem;
     padding: 5rem;
   }
-  
-  @media only screen and (max-width: 500px) {
-    .form {
-      width: 30rem;
-      padding: 5rem;
-    }
 
-    .tenant-form-input:not(:first-child) {
-        margin-top: -1.5rem !important;
-      }
-  }  
+  .tenant-form-input:not(:first-child) {
+    margin-top: -1.5rem !important;
+  }
+}

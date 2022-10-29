@@ -9,8 +9,10 @@ const Form_data = () => {
   const [Identity, setIdentity] = useState("host");
 
   return (
-    <div>
-      <Form_Choosen setIdentity={setIdentity} Identity={Identity} />
+    <div className="whole-form">
+      <div className="form-chosen">
+        <Form_Choosen setIdentity={setIdentity} Identity={Identity} />
+      </div>
       {Identity === "host" ? <Host_form /> : <Tenant_form />}
     </div>
   );
