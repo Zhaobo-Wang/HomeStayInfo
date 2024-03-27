@@ -1,3 +1,5 @@
+搭建了一个共享HomeStay Information的平台
+
 Project心得：
 
 
